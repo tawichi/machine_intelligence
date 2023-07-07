@@ -1,0 +1,71 @@
+コマンド
+
+docker run
+
+docker
+start/stop/restart
+
+docker exec
+
+docker container ls
+docker rm
+
+docker images
+docker rmi
+
+docker build
+
+docker logs
+
+docker search
+
+docker image pull
+
+コマンド記述例
+$ docker run コンテナ 指定
+
+$ docker start コンテナ 指定
+$ docker stop コンテナ指定
+$ docker restart コンテナ 指定
+
+$ docker exec コンテナ 指定 コ
+マンド
+
+$ docker container ls
+
+$ docker rm コンテナ 指定
+
+$ docker images
+
+$ docker rmi イメージ指定
+
+$ docker build Dockerfileパス
+$ docker logs コンテナ 指定
+
+$ docker search 検索するイメ
+ージ名
+
+$ docker image pull リボジト
+り名
+
+説明
+
+コンテデナを起動する
+
+コンテナを開始・停止・再起動など操作する
+
+起動中のコンテナ内でコマンドを実行する
+
+コンテナの一覧を表示する
+停止中のコンデナを削除する
+
+ローカルのイメージをすべて表示する
+Dockerイメージを削除する
+Dockerfileからイメージを作成する
+コンテナのログを出力する
+
+Docker Hubに公開されているDockerイメージ
+を検索する
+
+Docker Hubからイメージをダウンロードする
+

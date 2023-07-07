@@ -1,0 +1,45 @@
+以下のように整形します。
+
+コマンド:
+
+- docker run
+- docker start/stop/restart
+- docker exec
+- docker container ls
+- docker rm
+- docker images
+- docker rmi
+- docker build
+- docker logs
+- docker search
+- docker image pull
+
+コマンド記述例:
+
+- $ docker run [コンテナ指定]
+- $ docker start [コンテナ指定]
+- $ docker stop [コンテナ指定]
+- $ docker restart [コンテナ指定]
+- $ docker exec [コンテナ指定] [コマンド]
+- $ docker container ls
+- $ docker rm [コンテナ指定]
+- $ docker images
+- $ docker rmi [イメージ指定]
+- $ docker build [Dockerfileパス]
+- $ docker logs [コンテナ指定]
+- $ docker search [検索するイメージ名]
+- $ docker image pull [リポジトリ名]
+
+説明:
+
+- docker run: コンテナを起動する
+- docker start/stop/restart: コンテナを開始・停止・再起動など操作する
+- docker exec: 起動中のコンテナ内でコマンドを実行する
+- docker container ls: コンテナの一覧を表示する
+- docker rm: 停止中のコンテナを削除する
+- docker images: ローカルのイメージをすべて表示する
+- docker rmi: Dockerイメージを削除する
+- docker build: Dockerfileからイメージを作成する
+- docker logs: コンテナのログを出力する
+- docker search: Docker Hubに公開されているDockerイメージを検索する
+- docker image pull: Docker Hubからイメージをダウンロードする

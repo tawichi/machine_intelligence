@@ -1,0 +1,163 @@
+Data Wrangling                                            V Data - Afoundation for wrangling in pandas
+
+還当配当革急               回回語     Tidy data complements pandas's vectorized    回  米          回
+
+with pandas Cheat Sheet             Inatidy                                                                  operations. pandas will automatically preserve                Em
+http://pandas.pydata.org             data set:                                                                     observations as you manipulate variables. No                   ーー
+other format works as intuitively with pandas.   M    米    A
+
+Pandas API Reference Pandas User Guide                  Each variable is saved             Each observation is
+in its own column                  saved in its own row
+
+                                                                                                                                                                                                                                                                  
+
+eating DataFrames
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+L 証 証                           にトートー                                                     こ=思置置男                 df.sort_values('mpg')
+1         4         7         10                                                                                                                                                                                   Order rows by values of a column (low to high).
+=        =        演                                                                                                                                                           df.sort values( "mpg*, ascending=Fa1se )
+=         =         =                                                                                                                                                                                        Order rows by values of a column (high to low).
+df = pd.DataFrame(                                                                                                                                                                                                          rr        ・
+てt"a" : [4。 5。 6],                              の    _                                    df.pivot(co1umns= "var', values='va1') | df.rename(columns = {'y':'year'})
+"b" : [7, 8。 9],                               Gather columns into rows.                          Spread rows into columns                                  Rename the columns of a DataFrame
+、 "er: [49, 1 121)                       男当 還昌| 還明          還昌               証当還還                                                      df.sort index()
+」     index = [1, 2, 3])                                                                                              依肖| | |                   Sort the index of a DataFrame
+Specify values for each column.
+男還還還還                                               還思還還還古                                                        df.reset index( )
+df = pd.DataFrame(                                                                                                                                                                                Reset index of DataFrame to row numbers, moving
+[[4, 7, 19],                                                                                                                                                                                                   index to columns.
+5 8, 11                                                                                                                                                ーー
+回  9  6                                             pd.concat( [df1,df2] )                        pd.concat([df1,df2] , axis=1)                   df.drop(co1umns=['Length> "Hetght'])
+Append rows of DataFrames                       Append columns of DataFrames                               Drop columns from DataFrame
+
+index=[1。 2 3],
+
+columns=['a'。 'b'。 'c'])
+Specify values for each row.                         Subset Observations - roWs       Subset Variables - columns       Subsets - rows and columns
+癌計時             | 還昌 還昌                  ー語 還呈下呈  時っ                Use df.1oc[] anddf.i1oc[] toselect only
+| | |  曲 テ
+
+ 
+
+ 
+
+ 
+
+      
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+rows, only columns or both.
+ュ |4 | lo                                                                                                                                                                          Use df .at[ ] anddf.1at[ ] toaccess a single
+> 皇 拓                             df[df.Length > 7]                                        df[['width> 。 '1ength* 。 "species']]           value by row and column.
+-      っ      5      3      っ                                  Extract rows that meet logical criteria.                     Select multiple columns with specific names.          First index selects rows, second index columns.
+df.drop_dup1icates( )                      df[ "width'] or df.width                 df.i1oc[19:29]
+df = pd.DataFrame(                                               Remove duplicate rows (only considers columns). Select single column with specific name.                   Salectn     _ 10.20
+{("a" : [4 5。6],                df.samp1e(frac=9.5)                     df.fi1ter(regex='regex' )                 df 11oc[:。 [1  2  5]]
+   : [7, 8, 9],                                 Randomly select fraction of rows.                            Select columns whose name matches                        Salect  L       うう  itions 1. 2 and 5 (frst
+: [16,。 11, 12]}。                      df .samp1e(n=19) Randomly select n rows.               regUlar expression 7e9ex.                                          了 TO in positions 1, 2 and 5 (fi
+index = pd. Mu1tTndex。 from tup1es(       df.nlargest(n。 "Value* )                    df.1oc[:。 2「E"x4]
+[('d)。 1)。 ('d)。2)。                 Select and order top n entries.                           RI:1                         ニー      ・                -    -
+('e*」 2)], names=['n*。 "vV"]))    df.nsma11est(n。 "value')                                       -      ーー          Select all columns between x2 and x4 (mclusive)-
+Create DataFrame with a Multilndex                           Select and order bottom n entries.                   query() allows Boolean expressions for filtering         df.1oc[df['a'] > 16,['a*。「c「]]
+df.head(n)                                                                      TOWS.                                                                                          Select rows meeting logical condition, and only
+Select first n rows                                          df.query('Length > 7')                                  the specific columns .
+Me            hainin            df.ta1(n)    -                         df.query('Length > 7 and Midth < 8')    df.iat[1, 2] Access single value by index
+Select lst n rows                                            df.query( "Name.str.startswith( "abc")'。 df.at[4, 'A'] Access single value by label
+
+Most pandas methods return a DataFrame so that                                    「-                                                               engine="python")
+another pandas method can be applied to the result.                                    Logic in Python (and pandas)                                                            regex (Regular Expressions) Examples
+8 AE ofcode.                                       < tessthan                   1=                                          Not equal to                                me                               Matches strings containing a period
+
+。ren ame( co1umns={                                           > | Greaterthan                df . co1umn . sin(vgroues)           Group membership                           "Length$'                         Matches strings ending with word 'Length'
+
+"variab1e': "var'。                        == | Equals                         pd.snu11(opけ)                         ls NaN                                            ^Sepa1'                           Matches strings beginning with the word "Sepa『'
+」  *value':" pe すけ)                            <= | tess than orequals 。目pq.notnu11(op7)                       ls not NaN                                      "Ax[1-5]$"                       Matches strings beginning with X'and ending with 1.2.3.4.5
+EUCX (人8コン8/                             >= | Greaterthan or equals 時&, | 。<,^。df.any() df.a11() | Logicaland, or not, xor, any, al         ^(?1Species$).*"         Matches strings except the string 'Species'
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Cheatsheet for pandas (http//pandas.pvdata.org/ originally written by Irv Lustig. Princeton Consultants。 inspired by Rstudio Data Wrangling Cheatsheet
+
+ 
+

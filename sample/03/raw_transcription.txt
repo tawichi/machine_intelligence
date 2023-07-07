@@ -1,0 +1,38 @@
+き Bdirectiona1 recurrent neura1 network (many-to-one)
+
+class BiRNN(nn.Hlodule) :
+
+def
+
+def
+
+mode1 =
+
+init_ (se1f。 input_size, hidden_s1ze。 num_1ayers。 num_c1asses) :
+super(BiRNN。 se1f) init_()
+
+se1f.hidden_sze = hidden_size
+
+ 
+
+se1f.num_1ayers = num_1ayers
+se1f.1stm = nn.LSTN(input_size。 hidden_size。 num_1ayers。 batch_first=True。 bdirectona1=True)
+
+se1f.fc = nn.Lnear(hdden_sze*2。 num_c1asses) # 2 for bidirection
+
+forward(se1f。 x) :
+# Set 1nitia1 states
+he - torch.zeros(se1f.num_1ayers*2。 x.size(9@), se1f.htdden_size).to(device) # 2 for bidirection
+
+ce = torch.zeros(se1f.num_1ayers*2。 x.sze(@)。 se1f.hdden_size) .to(device)
+
+き Foruard propagate LSTM
+out。 = se1f.1stm(x。 (h@。 c@)) # out: tensor of shape (batch_size, seq_1ength。 hdden_sze*2)
+
+き Decode the hidden state of the 1ast tme step
+out = self.fc(out[:。-1。:])
+
+return out
+
+BHRNN(input_size。 hidden_size。 num_1ayers。 num_casses) to(device)
+

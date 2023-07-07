@@ -1,0 +1,49 @@
+Data Wrangling - A foundation for wrangling in pandas
+
+Tidy data complements pandas's vectorized operations. pandas will automatically preserve observations as you manipulate variables. No other format works as intuitively with pandas.
+
+In a tidy data set:
+- Each variable is saved in its own column
+- Each observation is saved in its own row
+
+Creating DataFrames:
+
+df = pd.DataFrame(
+    {"a" : [4, 5, 6],
+    "b" : [7, 8, 9],
+    "c": [10, 11, 12]},
+    index = [1, 2, 3]
+)
+Specify values for each column.
+
+df = pd.DataFrame(
+    [[4, 7, 10],
+    [5, 8, 11],
+    [6, 9, 12]],
+    index=[1, 2, 3],
+    columns=['a', 'b', 'c']
+)
+Specify values for each row.
+
+Use df.loc[] and df.iloc[] to select only rows, only columns or both.
+
+df[df.Length > 7] - Extract rows that meet logical criteria.
+df[['width', 'length', 'species']] - Select multiple columns with specific names.
+df.drop_duplicates() - Remove duplicate rows (only considers columns).
+df.sample(frac=0.5) - Randomly select fraction of rows.
+df.sample(n=10) - Randomly select n rows.
+df.nlargest(n, "Value") - Select and order top n entries.
+df.nsmallest(n, "value") - Select and order bottom n entries.
+df.head(n) - Select first n rows.
+df.tail(n) - Select last n rows.
+
+Most pandas methods return a DataFrame so that another pandas method can be applied to the result.
+
+Logic in Python (and pandas):
+< - Less than
+> - Greater than
+== - Equals
+<= - Less than or equals
+>= - Greater than or equals
+
+Cheatsheet for pandas (http://pandas.pydata.org/) originally written by Irv Lustig, Princeton Consultants, inspired by Rstudio Data Wrangling Cheatsheet.
