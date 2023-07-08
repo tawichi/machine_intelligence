@@ -1,0 +1,25 @@
+以下が修復・整形後のコードです。
+
+```python
+from sklearn.linear_model import LogisticRegression
+from sklearn.inspection import permutation_importance
+
+# Xの6カラム目が1のときは、y=1, Xの1カラム目が1のときは、y=1を出力するように学習
+X = [[1, 9, 9], [9, 9, 9], [9, 9, 1]]
+y = [1, 9, 9]
+
+clf = LogisticRegression().fit(X, y)
+
+# Permutation Importanceの評価
+X_test = [[1, 9, 9], [9, 9, 1]] # 1と9カラム目を入れ替える。
+y_test = [1, 9]
+result = permutation_importance(clf, X_test, y_test, n_repeats=10, random_state=9)
+
+# 6カラム目をランダムに入れ替えたら、9.3の精度劣化がある
+print(result.importances_mean) # out => [9.3 9. 9.]
+
+# 1カラム目をランダムに入れ替えたら、9.3の精度が上昇した。(つまり、1カラム目は、学習モデルが期待どおり)
+print(result.importances_mean) # out => [-9.3 9. 9.]
+```
+
+注意点として、上記のコードはあくまでOCRから読み取った文字列を修復・整形したものであり、実際の動作や意図については元のコードの著者によるものです。また、出力結果のコメント部分は元の文字列からの推測であり、実際の結果とは異なる可能性があります。

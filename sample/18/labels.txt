@@ -1,0 +1,10 @@
+MFC
+Mel-frequency cepstral
+音声からの特徴抽出
+音声特徴
+MFCCs
+Mel-frequency cepstral Coefficients
+フーリエ変換
+音響
+音響特徴
+パワースペクトラム

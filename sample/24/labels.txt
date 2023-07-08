@@ -1,0 +1,10 @@
+Git
+Git コミットの取り消し
+コミット　取り消し
+Commit 取り消し
+git reset
+git reset オプション
+コミットの打ち消し
+コミットの上書き
+コミット　打消し　コマンド
+git reset HEAD

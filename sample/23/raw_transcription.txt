@@ -1,0 +1,91 @@
+ 
+
+Dockerfile
+
+FROM ubuntu:16.64
+
+# aptパッケージの更新
+
+# 必要な apt パッケージのインストール
+RUN apt-get update && apt-get upgrade -y && apt-get insta11 -y wget sudo python-setuptoo1s pytト
+# 必要な pip パッケージのインストール
+
+陸生生れら1上和1間生音:じ生ら=1b軒の
+
+ 
+
+-12- scipy matplot1ib cython scikit-im
+
+# Torchのインストール
+
+いい:科は
+
+RUN git c1one https://github . com/torch/distro-git >/torch --recursive
+MORKDTR /root/torch
+
+RUN sudo dpkg --configure -a
+
+RUN bash insta11-deps
+
+RUN ./insta11.sh -y
+
+RUN . /root/-bashrc
+
+# thコマンドのPATHを通す
+
+RUN export PATH=/root/torch/bin:$PATHz
+
+計3Ou 着い半5:が人の5いけAa72E17は1中Bt:がふく信2
+
+# Torch用のLUAパバッケージをインストール
+# 1uarocksをビルドするのに1ua**が必要になるたゆめ事前にインストール.
+RUN sudo apt-get insta11 1ua5.3
+
+RUN sudo apt-get instal1 -y 1ua5.3-dev
+
+#luarocksをインストール
+
+SED電TFTd<3
+
+MORKDTR /root/torch/1uarocks
+
+RUN wget https://1uarocks .org/releases/1uarocks-3.3.1.tar.gz
+RUN tar -xf 1uarocks-3.3.1.tar-gz
+
+MORKDTR /rooモ/torch/1uarocks/1uarocks-3.3-.1
+
+に 半んさetc
+
+RUN make
+
+RUN make insta11
+
+#LUAパッケージインストール
+RUN for NAME in dpnn nn optim optnet csvigo cutorch cunn fb1ua1ib torchx tds image nngraph: do
+
+FEりにこのビクシンコ1
+
+RUN git c1one https://github com/cmusatyalab/openface …/openface --recursive
+WORKDTR /root/openface
+
+RUN sudo python setup-py nsta11
+
+RUN sudo python3 setup_py insta11
+
+# 追加で必要なものをインストール
+RUN -/mode1s/get-mode1s.sh
+RUN ./demos/web/insta11-deps-sh
+
+RUN sudo pip insta11 -r demos/web/requirements_txt
+
+# python3でOpenFaceを動かすたゆに必要なものをインストール
+MORKDTR /rooモ
+
+RUN cur1 https://bootstrap-pypa-1o/get-pip-py -o get-pip-py
+RUN sudo python3 get-pip-py SS python3 -m pip insta11 -U pip
+RUN sudo apt-get insta11 -y python3-dev
+
+# OpenCV,d1ibのインストール
+
+RUN python3 -m pip insta11 opencv_python d1ib
+

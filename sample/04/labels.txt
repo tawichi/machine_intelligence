@@ -1,6 +1,10 @@
 Pandasのチートシート
 DataFrame
 Pandasの操作方法がまとまった図
-あとで埋める
-後で埋める
-あとで
+DataFrameの操作方法
+Dataframeの結合方法
+Data Wrangling
+Dataframe　Reshape
+DataFrameで要素を指定
+DataFrameで検索
+DataFrameで条件指定

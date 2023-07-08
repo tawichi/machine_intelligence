@@ -1,0 +1,56 @@
+from sk1earn.13near mode] import LogsticRegression
+
+from sk1earn.nspection import permutation_importance
+
+3
+
+# Xの6カラム目が1のときは、y=1, Xの1カラム目が@のと きは、y=1を出力するように学習
+
+> 9。 9],
+
+。 9, 9]]
+
+]
+|
+
+[
+LU
+
+# Permutation Tmportanceの評価
+
+3
+
+X_test =[[1。 9, 9], [9, 9。 9]1
+
+y_test = [1。 9]
+
+SE生生FtStほTeつま委.人をで全くや二半Fe
+random_state=9)
+
+# 6カラム目をランダムに入れ替えたら、9.3の精度劣化がある
+
+print(resu1t.mportances_mean) # out => [9.3 9. 9.]
+
+from sk1earn.13near mode] import LogsticRegression
+from sk1earn.nspection import permutation_importance
+3
+# Xの6カラム目が1のときは、y=1, Xの1カラム目が@のと きは、y=1を出力するように学習
+3
+
+EPJIEIEPEIIEDPECTEE)
+
+。 9],[9, 9, 9],[9, 9,。 9]1]
+> 9, 9@, 9]
+
+LogisticRegression( ) -fit(X。y)
+
+# Permutation Tmportanceの評価
+X_test =[[9, 9, 9], [1, 9,。 9]] # 9と1カラム目をいれかえる。
+y_test = [1。 9]
+resu1t = permutation importance(c1f。 X tesモ。 y_test。 n_nepeats=19。
+random_state=9)
+# 9カラム目をランダムに入れ替えたら、g.3の精度が上昇した。(つまり、eカラム目は、学習モデルが期待どお
+Print(resu1t . importances_mean) ## out => [-9.3 9. 9.]
+
+ 
+

@@ -1,0 +1,10 @@
+ssh config
+sshのconfig設定
+configファイルの書き方
+鍵認証
+config 記述
+鍵認証　configファイル
+ssh/config
+ssh/config 記述方法
+ssh/config 設定
+HostName 

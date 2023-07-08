@@ -1,0 +1,10 @@
+FACS
+Facial Action Coding system
+Action unit
+表情認識
+表情の定量化
+FACSの概要
+FACS による表情の定量化
+Action Unitによる表情の定量化
+表情解析
+表情金

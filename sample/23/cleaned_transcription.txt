@@ -1,0 +1,61 @@
+Dockerfile
+
+FROM ubuntu:16.04
+
+# aptパッケージの更新
+# 必要な apt パッケージのインストール
+RUN apt-get update && apt-get upgrade -y && apt-get install -y wget sudo python-setuptools python
+
+# 必要な pip パッケージのインストール
+RUN pip install scipy matplotlib cython scikit-learn
+
+# Torchのインストール
+RUN git clone https://github.com/torch/distro.git ~/torch --recursive
+WORKDIR /root/torch
+
+RUN sudo dpkg --configure -a
+RUN bash install-deps
+RUN ./install.sh -y
+RUN . /root/.bashrc
+
+# thコマンドのPATHを通す
+RUN export PATH=/root/torch/bin:$PATH
+
+# Torch用のLUAパッケージをインストール
+# luarocksをビルドするのにluaが必要になるため事前にインストール.
+RUN sudo apt-get install lua5.3
+RUN sudo apt-get install -y lua5.3-dev
+
+# luarocksをインストール
+WORKDIR /root/torch/luarocks
+RUN wget https://luarocks.org/releases/luarocks-3.3.1.tar.gz
+RUN tar -xf luarocks-3.3.1.tar.gz
+WORKDIR /root/torch/luarocks/luarocks-3.3.1
+RUN make
+RUN make install
+
+# LUAパッケージインストール
+RUN for NAME in dpnn nn optim optnet csvigo cutorch cunn fblualib torchx tds image nngraph; do
+    luarocks install $NAME;
+done
+
+# OpenFaceのインストール
+RUN git clone https://github.com/cmusatyalab/openface.git ~/openface --recursive
+WORKDIR /root/openface
+RUN sudo python setup.py install
+RUN sudo python3 setup.py install
+
+# 追加で必要なものをインストール
+RUN ./models/get-models.sh
+RUN ./demos/web/install-deps.sh
+RUN sudo pip install -r demos/web/requirements.txt
+
+# python3でOpenFaceを動かすために必要なものをインストール
+WORKDIR /root
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+RUN sudo python3 get-pip.py
+RUN sudo python3 -m pip install -U pip
+RUN sudo apt-get install -y python3-dev
+
+# OpenCV, dlibのインストール
+RUN python3 -m pip install opencv-python dlib

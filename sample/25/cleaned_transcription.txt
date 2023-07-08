@@ -1,0 +1,26 @@
+設定ファイルでHostを設定する
+
+ssh/config
+
+Host [ホスト]
+HostName github.com
+Port 22
+IdentityFile ~/.ssh/id_rsa_github
+IdentitiesOnly yes
+
+Host github-company
+HostName github.com
+Port 22
+IdentityFile ~/.ssh/id_rsa_github_company
+IdentitiesOnly yes
+
+# 個人GitLabの場合
+Host gitlab-private
+HostName gitlab.com
+IdentityFile ~/.ssh/id_rsa_gitlab_private
+IdentitiesOnly yes
+
+Host git.company.co.jp
+Port 2233
+IdentityFile ~/.ssh/id_rsa_company
+IdentitiesOnly yes

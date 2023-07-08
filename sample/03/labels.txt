@@ -3,3 +3,8 @@ PyTorch
 RNN
 Pytorchのサンプル
 コード
+BiRNNのコード
+時系列データの実装
+PyTorchのサンプルコード
+LSTMの実装方法
+Recurrent Newral Networkの実装

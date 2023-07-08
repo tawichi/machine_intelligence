@@ -1,0 +1,47 @@
+設定ファイルでHostを設定する
+
+ssh/config
+
+-/sslyconf
+
+Host [ポスト]
+コーシャリネをまま1
+3間ル守3いこいもメルルリゴリ上すき生じだすり
+にュー
+St EN
+ェdenttiesony yes
+
+PNG
+1
+Hostame gthub-com
+3
+Port 22
+CeだJu
+ェdentitiesony yes
+
+TE
+GRY 7
+Hostame gthub-com
+3
+にテコ
+denttyFile -/-ssh/3d_rsa_gtthub_company
+ェdentitiesony yes
+
+#則 個人GitLabO場合
+1
+ER
+3
+にテコ
+denttyFile -/.ssh/1d_rsa_gttuab_private
+ェdentitiesony yes
+
+EGG
+Host gt.company.co-jp
+すい
+3
+Port 2233
+CSだ72F WOW 4
+ェdentitiesony yes
+
+ 
+
